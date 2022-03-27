@@ -22,6 +22,32 @@ inapplicability.
 Also, I don't think the current code-base compiles and loads, but I hope to get
 it working for the next Quicklisp release.
 
+I've excluded the following type-categories from this code-dump, because they
+depend on or are dependencies for unreleased Black Brane software:
+
+- primitives
+- environments
+- namespaces
+- readtables
+- interfaces
+- sequences
+- categories
+- domains
+- models
+- analogues
+- metamachines
+- machines
+
+Additionally, in the process of this rewrite the code-base got a little
+disorganized:
+
+- macro-definers are in `definition-forms/functions.lisp`
+- first-class evaluation operators are in `types.lisp`
+- `def:fexpr` is in `canonical-forms.lisp`
+- the parser module doesn't follow `BAPHOMET` definer syntax
+- the `BAPHOMET` and `DEF` packages still export symbols that no longer exist in
+  this code-dump
+
 ## Authors
 
 - @thephoeron
