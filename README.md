@@ -19,8 +19,8 @@ The present codebase was in the midst of yet another massive rewrite, so the
 documentation has been excluded from the present code-dump due to its appalling
 inapplicability.
 
-Also, I don't think the current code-base compiles and loads, but I hope to get
-it working for the next Quicklisp release.
+The current code-base doesn't compile and load, but I hope to get it working for
+the next Quicklisp release.
 
 I've excluded the following type-categories from this code-dump, because they
 depend on or are dependencies for unreleased Black Brane software:
@@ -37,6 +37,10 @@ depend on or are dependencies for unreleased Black Brane software:
 - analogues
 - metamachines
 - machines
+
+Some code was extracted from `BAPHOMET` and moved to the Quicksilver quantum
+compiler suite, but it will be returned to this library because it's needed here
+as part of the support for the packages-as-types convention.
 
 Additionally, in the process of this rewrite the code-base got a little
 disorganized:
