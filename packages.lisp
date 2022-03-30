@@ -115,7 +115,7 @@
   (:export))
 
 (defpackage common-lisp/sequence
-  (:nicknames cl/sequence sequence)
+  (:nicknames cl/sequence)
   (:import-from cl)
   (:export))
 
@@ -187,11 +187,14 @@
   (:documentation "Extensible definer macros.")
   #+lispworks
   (:shadowing-import-from lispworks
-           #:with-unique-names)
-  (:import-from #:serapeum
+           #:with-unique-names
+           #:*user-package*)
+  (:import-from serapeum
            #:dict
            #:href
            #:@)
+  (:import-from trivial-types
+           #:type-specifier-p)
   (:export ;; types
            #:string-designator-p
            #:string-designator
@@ -209,13 +212,21 @@
            #:interface
            #:implementation-p
            #:implementation
-        ;; Utilities
+           ;; Evaluation Operators
+           #:eval-op
+           #:->
+           #:<-
+           #:>>
+           #:=>
+           #:*>
+           #:<*>
+           ;; Utilities
            #:when-let
            #:ensure-function
            #:ensure-list
            #:ensure-plist
            #:with-components
-        ;; Definers
+           ;; Definers
            #:definer-class
            #:definer-name-of
            #:definer-options-of
@@ -236,7 +247,7 @@
            #:expand-definer
            #:definer-type
            #:keyword-definer
-        ;; Definer Options
+           ;; Definer Options
            #:ensure-boolean-option
            #:ensure-string-option
            #:ensure-function-option
@@ -245,7 +256,7 @@
            #:combine-option-writers
            #:make-option-writer
            #:has-option-p
-        ;; Function Definers
+           ;; Function Definers
            #:declare-optimize
            #:declare-debug
            #:initialize-function-like-definer
@@ -258,13 +269,13 @@
            #:type-definer
            #:print-object-definer
            #:setf-definer
-        ;; Variable Definers
+           ;; Variable Definers
            #:variable-definer
            #:constant-definer
            #:load-time-constant-definer
            #:special-variable-definer
            #:symbol-macro-definer
-        ;; Miscelaneous Definers
+           ;; Miscelaneous Definers
            #:extract-slots
            #:extract-class-accessors
            #:extract-struct-accessors

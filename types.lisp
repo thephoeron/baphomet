@@ -79,8 +79,13 @@ TABLE."
 
 ;;;; === [[ :: [derived-type] STRING-DESIGNATOR :: ]] ===================================================================================================== ;;;;
 
+#+lispworks
 (deftype type-designator ()
   '(satisfies system::valid-type-specifier))
+
+#-lispworks
+(deftype type-designator ()
+  `(satisfies type-specifier-p))
 
 ;;;; === [[ :: [derived-type] STRING-DESIGNATOR :: ]] ===================================================================================================== ;;;;
 

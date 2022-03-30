@@ -3,6 +3,9 @@
 
 (in-package :baphomet)
 
+#-lispworks
+(defparameter *user-package* :cl-user)
+
 (defparameter *language* :common-lisp)
 
 ;;; ABSTRACT DEFINER DECLARATIONS
@@ -79,7 +82,7 @@
   `(progn
      (defparameter *current-package-name* (package-name *package*))
      (defparameter *current-language-name* (package-name *language*))
-     (in-package system:*user-package*)
+     (in-package *user-package*)
      (defpackage ,(symbol-name type-name)
        (:nicknames ,(format nil "~A.TYPES.~A" (package-name language) (symbol-name type-name))
                    ,(format nil "CL.TYPE.~A" (symbol-name type-name)))

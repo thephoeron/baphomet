@@ -21,7 +21,8 @@
   :licence "MIT"
   :depends-on (closer-mop
                serapeum
-               alexandria)
+               alexandria
+               trivial-types)
   :serial t
   :components ((:file "packages")
                (:file "types")
