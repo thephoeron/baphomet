@@ -139,8 +139,8 @@ TABLE."
 (deftype <- (typed-lambda-list reduction-value)
   `(eval-op ,typed-lambda-list ,reduction-value))
 
-(defmacro -> (type-name typed-lambda-list reduction-value)
-  `(eval-op -> ,type-name ,typed-lambda-list ,reduction-value))
+(defmacro <- (type-name typed-lambda-list reduction-value)
+  `(eval-op <- ,type-name ,typed-lambda-list ,reduction-value))
 
 ;; expand form in-place destructively
 (deftype >> (typed-lambda-list expansion-value)
