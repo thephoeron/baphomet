@@ -52,20 +52,33 @@
 (defgeneric initialize-definer (definer)
   (:documentation "Initializes related definer class slots."))
 
-(defmethod initialize-definer ((self definer)))
+(defmethod initialize-definer ((self definer))
+  self)
 
 (defgeneric expand-definer (definer)
   (:documentation "Expands related definer class into its compilation form."))
 
-(defmethod expand-definer ((self definer)))
+(defmethod expand-definer ((self definer))
+  self)
 
-#+nil
-(defmacro definer (name-and-options &rest rest)
-  (destructuring-bind (name &rest definer-options) (ensure-list name-and-options)
-    (expand-definer
-     (initialize-definer (make-instance (get-definer name)
-                                        :definer-options definer-options
-                                        :forms rest)))))
+;;; COMMON ROUTINES
+
+(defun definer-type (definer)
+  (class-name (class-of definer)))
+
+(defclass keyword-definer (definer) ()
+  (:metaclass definer-class))
+
+;;; DEFINER MACRO
+
+(in-package :def)
+
+;; (defmacro definer (name-and-options &rest rest)
+;;   (destructuring-bind (name &rest definer-options) (ensure-list name-and-options)
+;;     (expand-definer
+;;      (initialize-definer (make-instance (get-definer name)
+;;                                         :definer-options definer-options
+;;                                         :forms rest)))))
 
 ;; I could increase the generality of definer forms if I delay deconstruction of
 ;; signatures until the definer being defined gets it
@@ -128,11 +141,3 @@
 ;;         (initialize-definer (make-instance (get-definer (name-of signature))
 ;;                                                         :definer-options options
 ;;                                                         :forms body))))
-
-;;; COMMON ROUTINES
-
-(defun definer-type (definer)
-  (class-name (class-of definer)))
-
-(defclass keyword-definer (definer) ()
-  (:metaclass definer-class))
