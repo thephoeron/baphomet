@@ -150,7 +150,7 @@ TABLE."
   `(eval-op >> ,type-name ,typed-lambda-list ,expansion-value))
 
 ;; evaluate in lexical environment, then return to caller
-(deftype => (typed-lambda-list return-values)
+(deftype => (typed-lambda-list return-value)
   `(eval-op ,typed-lambda-list ,return-value))
 
 (defmacro => (type-name typed-lambda-list return-value)
