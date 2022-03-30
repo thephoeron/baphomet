@@ -14,6 +14,60 @@
 ;; Then we define packages for the Common Lisp object/type model, and re-export
 ;; symbols according to the packages-as-types convention
 
+;; Funcallables are directly re-exported
+
+(defpackage common-lisp/special-form
+  (:nicknames cl/special-form special-form)
+  (:import-from cl)
+  (:export))
+
+(defpackage common-lisp/function
+  (:nicknames cl/function function)
+  (:import-from cl)
+  (:export))
+
+(defpackage common-lisp/macro-function
+  (:nicknames cl/macro-function macro-function)
+  (:import-from cl)
+  (:export))
+
+(defpackage common-lisp/compiler-macro
+  (:nicknames cl/compiler-macro compiler-macro)
+  (:import-from cl)
+  (:export))
+
+(defpackage common-lisp/symbol-macro
+  (:nicknames cl/symbol-macro symbol-macro)
+  (:import-from cl)
+  (:export))
+
+(defpackage common-lisp/reader-macro
+  (:nicknames cl/reader-macro reader-macro)
+  (:import-from cl)
+  (:export))
+
+(defpackage common-lisp/modify-macro
+  (:nicknames cl/modify-macro modify-macro)
+  (:import-from cl)
+  (:export))
+
+(defpackage common-lisp/fexpr
+  (:nicknames cl/fexpr fexpr)
+  (:import-from cl)
+  (:export))
+
+(defpackage common-lisp/generic-function
+  (:nicknames cl/generic-function generic-function)
+  (:import-from cl)
+  (:export))
+
+(defpackage common-lisp/method
+  (:nicknames cl/method method)
+  (:import-from cl)
+  (:export))
+
+;; Other objects/types share a generic interface
+
 (defpackage common-lisp/generic-interface
   (:nicknames cl/generic-interface generic-interface)
   (:use c2cl)
