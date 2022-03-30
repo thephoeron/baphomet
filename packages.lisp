@@ -14,168 +14,212 @@
 ;; Then we define packages for the Common Lisp object/type model, and re-export
 ;; symbols according to the packages-as-types convention
 
+(defpackage common-lisp/generic-interface
+  (:nicknames cl/generic-interface generic-interface)
+  (:use c2cl)
+  (:export #:instancep
+           #:new
+           #:redefine
+           #:copy
+           #:initialize
+           #:collapse
+           #:invoke))
+
 (defpackage common-lisp/environment
   (:nicknames cl/environment environment)
+  (:use cl/generic-interface)
   (:import-from cl)
   (:export))
 
 (defpackage common-lisp/binding
   (:nicknames cl/binding binding)
+  (:use cl/generic-interface)
   (:import-from cl)
   (:export))
 
 (defpackage common-lisp/reader
   (:nicknames cl/reader reader)
+  (:use cl/generic-interface)
   (:import-from cl)
   (:export))
 
 (defpackage common-lisp/evaluator
   (:nicknames cl/evaluator evaluator)
+  (:use cl/generic-interface)
   (:import-from cl)
   (:export))
 
 (defpackage common-lisp/compiler
   (:nicknames cl/compiler compiler)
+  (:use cl/generic-interface)
   (:import-from cl)
   (:export))
 
 (defpackage common-lisp/package
   (:nicknames cl/package package)
+  (:use cl/generic-interface)
   (:import-from cl)
   (:export))
 
 (defpackage common-lisp/type
   (:nicknames cl/type type)
+  (:use cl/generic-interface)
   (:import-from cl)
   (:export))
 
 (defpackage common-lisp/class
   (:nicknames cl/class class)
+  (:use cl/generic-interface)
   (:import-from cl)
   (:export))
 
 (defpackage common-lisp/object
   (:nicknames cl/object object)
+  (:use cl/generic-interface)
   (:import-from cl)
   (:export))
 
 (defpackage common-lisp/iterator
   (:nicknames cl/iterator iterator)
+  (:use cl/generic-interface)
   (:import-from cl)
   (:export))
 
 (defpackage common-lisp/structure
   (:nicknames cl/structure structure)
+  (:use cl/generic-interface)
   (:import-from cl)
   (:export))
 
 (defpackage common-lisp/condition
   (:nicknames cl/condition condition)
+  (:use cl/generic-interface)
   (:import-from cl)
   (:export))
 
 (defpackage common-lisp/symbol
   (:nicknames cl/symbol symbol)
+  (:use cl/generic-interface)
   (:import-from cl)
   (:export))
 
 (defpackage common-lisp/number
   (:nicknames cl/number number)
+  (:use cl/generic-interface)
   (:import-from cl)
   (:export))
 
 (defpackage common-lisp/integer
   (:nicknames cl/integer integer)
+  (:use cl/generic-interface)
   (:import-from cl)
   (:export))
 
 (defpackage common-lisp/real-number
   (:nicknames cl/real-number real-number)
+  (:use cl/generic-interface)
   (:import-from cl)
   (:export))
 
 (defpackage common-lisp/rational-number
   (:nicknames cl/rational-number rational-number)
+  (:use cl/generic-interface)
   (:import-from cl)
   (:export))
 
 (defpackage common-lisp/complex-number
   (:nicknames cl/complex-number complex-number)
+  (:use cl/generic-interface)
   (:import-from cl)
   (:export))
 
 (defpackage common-lisp/character
   (:nicknames cl/character character)
+  (:use cl/generic-interface)
   (:import-from cl)
   (:export))
 
 (defpackage common-lisp/cons-cells
   (:nicknames cl/cons-cells cons-cells)
+  (:use cl/generic-interface)
   (:import-from cl)
   (:export))
 
 (defpackage common-lisp/sequence
   (:nicknames cl/sequence)
+  (:use cl/generic-interface)
   (:import-from cl)
   (:export))
 
 (defpackage common-lisp/array
   (:nicknames cl/array array)
+  (:use cl/generic-interface)
   (:import-from cl)
   (:export))
 
 (defpackage common-lisp/vector
   (:nicknames cl/vector vector)
+  (:use cl/generic-interface)
   (:import-from cl)
   (:export))
 
 (defpackage common-lisp/string
   (:nicknames cl/string string)
+  (:use cl/generic-interface)
   (:import-from cl)
   (:export))
 
 (defpackage common-lisp/list
   (:nicknames cl/list list)
+  (:use cl/generic-interface)
   (:import-from cl)
   (:export))
 
 (defpackage common-lisp/association-list
   (:nicknames cl/association-list association-list)
   (:import-from cl)
+  (:use cl/generic-interface)
   (:export))
 
 (defpackage common-lisp/property-list
   (:nicknames cl/property-list property-list)
+  (:use cl/generic-interface)
   (:import-from cl)
   (:export))
 
 (defpackage common-lisp/hash-table
   (:nicknames cl/hash-table hash-table)
+  (:use cl/generic-interface)
   (:import-from cl)
   (:export))
 
 (defpackage common-lisp/pathname
   (:nicknames cl/pathname pathname)
+  (:use cl/generic-interface)
   (:import-from cl)
   (:export))
 
 (defpackage common-lisp/file
   (:nicknames cl/file file)
+  (:use cl/generic-interface)
   (:import-from cl)
   (:export))
 
 (defpackage common-lisp/stream
   (:nicknames cl/stream stream)
+  (:use cl/generic-interface)
   (:import-from cl)
   (:export))
 
 (defpackage common-lisp/printer
   (:nicknames cl/printer printer)
+  (:use cl/generic-interface)
   (:import-from cl)
   (:export))
 
 (defpackage common-lisp/format-string
   (:nicknames cl/format-string format-string)
+  (:use cl/generic-interface)
   (:import-from cl)
   (:export))
 
