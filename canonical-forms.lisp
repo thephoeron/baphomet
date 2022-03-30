@@ -38,8 +38,8 @@ FORM."
   (let ((val (assoc item alist)))
     (typecase val
       (null nil)
-      (cons (or (cadr val) :no-value))
-      (otherwise (error "You done effed up.")))))
+      (cons (or (cdr val) :no-value))
+      (otherwise (error "~S is not an association list." val)))))
 
 (defun assoc-val-if (predicate alist &key key))
 
