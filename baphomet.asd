@@ -4,6 +4,7 @@
 (in-package :cl-user)
 
 (defpackage baphomet/asdf
+  (:nicknames baphomet/sys)
   (:use cl asdf uiop))
 
 (in-package :baphomet/asdf)

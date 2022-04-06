@@ -1,7 +1,7 @@
 ;; Copyright (c) 2022, "the Phoeron" Colin J.E. Lupton <thephoeron@protonmail.com>
 ;; Released under the MIT License. See baphomet/LICENSE for more information.
 
-(in-package :cl-user)
+(in-package :baphomet/sys)
 
 ;; first up, we take care of some implementation-dependent issues
 
@@ -16,59 +16,59 @@
 
 ;; Funcallables are directly re-exported
 
-(defpackage common-lisp/special-form
+(define-package common-lisp/special-form
   (:nicknames cl/special-form special-form)
-  (:import-from cl)
+  (:recycle cl)
   (:export))
 
-(defpackage common-lisp/function
+(define-package common-lisp/function
   (:nicknames cl/function function)
-  (:import-from cl)
+  (:recycle cl)
   (:export))
 
-(defpackage common-lisp/macro-function
+(define-package common-lisp/macro-function
   (:nicknames cl/macro-function macro-function)
-  (:import-from cl)
+  (:recycle cl)
   (:export))
 
-(defpackage common-lisp/compiler-macro
+(define-package common-lisp/compiler-macro
   (:nicknames cl/compiler-macro compiler-macro)
-  (:import-from cl)
+  (:recycle cl)
   (:export))
 
-(defpackage common-lisp/symbol-macro
+(define-package common-lisp/symbol-macro
   (:nicknames cl/symbol-macro symbol-macro)
-  (:import-from cl)
+  (:recycle cl)
   (:export))
 
-(defpackage common-lisp/reader-macro
+(define-package common-lisp/reader-macro
   (:nicknames cl/reader-macro reader-macro)
-  (:import-from cl)
+  (:recycle cl)
   (:export))
 
-(defpackage common-lisp/modify-macro
+(define-package common-lisp/modify-macro
   (:nicknames cl/modify-macro modify-macro)
-  (:import-from cl)
+  (:recycle cl)
   (:export))
 
-(defpackage common-lisp/fexpr
+(define-package common-lisp/fexpr
   (:nicknames cl/fexpr fexpr)
-  (:import-from cl)
+  (:recycle cl)
   (:export))
 
-(defpackage common-lisp/generic-function
+(define-package common-lisp/generic-function
   (:nicknames cl/generic-function generic-function)
-  (:import-from cl)
+  (:recycle cl)
   (:export))
 
-(defpackage common-lisp/method
+(define-package common-lisp/method
   (:nicknames cl/method method)
-  (:import-from cl)
+  (:recycle cl)
   (:export))
 
 ;; Other objects/types share a generic interface
 
-(defpackage common-lisp/generic-interface
+(define-package common-lisp/generic-interface
   (:nicknames cl/generic-interface generic-interface)
   (:use c2cl)
   (:export #:instancep
@@ -79,208 +79,208 @@
            #:collapse
            #:invoke))
 
-(defpackage common-lisp/environment
+(define-package common-lisp/environment
   (:nicknames cl/environment environment)
   (:use cl/generic-interface)
-  (:import-from cl)
+  (:recycle cl)
   (:export))
 
-(defpackage common-lisp/binding
+(define-package common-lisp/binding
   (:nicknames cl/binding binding)
   (:use cl/generic-interface)
-  (:import-from cl)
+  (:recycle cl)
   (:export))
 
-(defpackage common-lisp/reader
+(define-package common-lisp/reader
   (:nicknames cl/reader reader)
   (:use cl/generic-interface)
-  (:import-from cl)
+  (:recycle cl)
   (:export))
 
-(defpackage common-lisp/evaluator
+(define-package common-lisp/evaluator
   (:nicknames cl/evaluator evaluator)
   (:use cl/generic-interface)
-  (:import-from cl)
+  (:recycle cl)
   (:export))
 
-(defpackage common-lisp/compiler
+(define-package common-lisp/compiler
   (:nicknames cl/compiler compiler)
   (:use cl/generic-interface)
-  (:import-from cl)
+  (:recycle cl)
   (:export))
 
-(defpackage common-lisp/package
+(define-package common-lisp/package
   (:nicknames cl/package package)
   (:use cl/generic-interface)
-  (:import-from cl)
+  (:recycle cl)
   (:export))
 
-(defpackage common-lisp/type
+(define-package common-lisp/type
   (:nicknames cl/type type)
   (:use cl/generic-interface)
-  (:import-from cl)
+  (:recycle cl)
   (:export))
 
-(defpackage common-lisp/class
+(define-package common-lisp/class
   (:nicknames cl/class class)
   (:use cl/generic-interface)
-  (:import-from cl)
+  (:recycle cl)
   (:export))
 
-(defpackage common-lisp/object
+(define-package common-lisp/object
   (:nicknames cl/object object)
   (:use cl/generic-interface)
-  (:import-from cl)
+  (:recycle cl)
   (:export))
 
-(defpackage common-lisp/iterator
+(define-package common-lisp/iterator
   (:nicknames cl/iterator iterator)
   (:use cl/generic-interface)
-  (:import-from cl)
+  (:recycle cl)
   (:export))
 
-(defpackage common-lisp/structure
+(define-package common-lisp/structure
   (:nicknames cl/structure structure)
   (:use cl/generic-interface)
-  (:import-from cl)
+  (:recycle cl)
   (:export))
 
-(defpackage common-lisp/condition
+(define-package common-lisp/condition
   (:nicknames cl/condition condition)
   (:use cl/generic-interface)
-  (:import-from cl)
+  (:recycle cl)
   (:export))
 
-(defpackage common-lisp/symbol
+(define-package common-lisp/symbol
   (:nicknames cl/symbol symbol)
   (:use cl/generic-interface)
-  (:import-from cl)
+  (:recycle cl)
   (:export))
 
-(defpackage common-lisp/number
+(define-package common-lisp/number
   (:nicknames cl/number number)
   (:use cl/generic-interface)
-  (:import-from cl)
+  (:recycle cl)
   (:export))
 
-(defpackage common-lisp/integer
+(define-package common-lisp/integer
   (:nicknames cl/integer integer)
   (:use cl/generic-interface)
-  (:import-from cl)
+  (:recycle cl)
   (:export))
 
-(defpackage common-lisp/real-number
+(define-package common-lisp/real-number
   (:nicknames cl/real-number real-number)
   (:use cl/generic-interface)
-  (:import-from cl)
+  (:recycle cl)
   (:export))
 
-(defpackage common-lisp/rational-number
+(define-package common-lisp/rational-number
   (:nicknames cl/rational-number rational-number)
   (:use cl/generic-interface)
-  (:import-from cl)
+  (:recycle cl)
   (:export))
 
-(defpackage common-lisp/complex-number
+(define-package common-lisp/complex-number
   (:nicknames cl/complex-number complex-number)
   (:use cl/generic-interface)
-  (:import-from cl)
+  (:recycle cl)
   (:export))
 
-(defpackage common-lisp/character
+(define-package common-lisp/character
   (:nicknames cl/character character)
   (:use cl/generic-interface)
-  (:import-from cl)
+  (:recycle cl)
   (:export))
 
-(defpackage common-lisp/cons-cells
+(define-package common-lisp/cons-cells
   (:nicknames cl/cons-cells cons-cells)
   (:use cl/generic-interface)
-  (:import-from cl)
+  (:recycle cl)
   (:export))
 
-(defpackage common-lisp/sequence
+(define-package common-lisp/sequence
   (:nicknames cl/sequence)
   (:use cl/generic-interface)
-  (:import-from cl)
+  (:recycle cl)
   (:export))
 
-(defpackage common-lisp/array
+(define-package common-lisp/array
   (:nicknames cl/array array)
   (:use cl/generic-interface)
-  (:import-from cl)
+  (:recycle cl)
   (:export))
 
-(defpackage common-lisp/vector
+(define-package common-lisp/vector
   (:nicknames cl/vector vector)
   (:use cl/generic-interface)
-  (:import-from cl)
+  (:recycle cl)
   (:export))
 
-(defpackage common-lisp/string
+(define-package common-lisp/string
   (:nicknames cl/string string)
   (:use cl/generic-interface)
-  (:import-from cl)
+  (:recycle cl)
   (:export))
 
-(defpackage common-lisp/list
+(define-package common-lisp/list
   (:nicknames cl/list list)
   (:use cl/generic-interface)
-  (:import-from cl)
+  (:recycle cl)
   (:export))
 
-(defpackage common-lisp/association-list
+(define-package common-lisp/association-list
   (:nicknames cl/association-list association-list)
-  (:import-from cl)
+  (:recycle cl)
   (:use cl/generic-interface)
   (:export))
 
-(defpackage common-lisp/property-list
+(define-package common-lisp/property-list
   (:nicknames cl/property-list property-list)
   (:use cl/generic-interface)
-  (:import-from cl)
+  (:recycle cl)
   (:export))
 
-(defpackage common-lisp/hash-table
+(define-package common-lisp/hash-table
   (:nicknames cl/hash-table hash-table)
   (:use cl/generic-interface)
-  (:import-from cl)
+  (:recycle cl)
   (:export))
 
-(defpackage common-lisp/pathname
+(define-package common-lisp/pathname
   (:nicknames cl/pathname pathname)
   (:use cl/generic-interface)
-  (:import-from cl)
+  (:recycle cl)
   (:export))
 
-(defpackage common-lisp/file
+(define-package common-lisp/file
   (:nicknames cl/file file)
   (:use cl/generic-interface)
-  (:import-from cl)
+  (:recycle cl)
   (:export))
 
-(defpackage common-lisp/stream
+(define-package common-lisp/stream
   (:nicknames cl/stream stream)
   (:use cl/generic-interface)
-  (:import-from cl)
+  (:recycle cl)
   (:export))
 
-(defpackage common-lisp/printer
+(define-package common-lisp/printer
   (:nicknames cl/printer printer)
   (:use cl/generic-interface)
-  (:import-from cl)
+  (:recycle cl)
   (:export))
 
-(defpackage common-lisp/format-string
+(define-package common-lisp/format-string
   (:nicknames cl/format-string format-string)
   (:use cl/generic-interface)
-  (:import-from cl)
+  (:recycle cl)
   (:export))
 
 ;; Now we can define the Baphomet package to handle the machinery of extensible
 ;; definers
 
-(defpackage baphomet
+(define-package baphomet
   (:use c2cl)
   (:documentation "Extensible definer macros.")
   #+lispworks
@@ -390,7 +390,7 @@
 ;; Last but not least, we define the definer package to expose the API of
 ;; extensible definers
 
-(defpackage def
+(define-package def
   (:nicknames define)
   (:use c2cl baphomet)
   ;; base definition functor
