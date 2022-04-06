@@ -2,6 +2,34 @@
 
 Extensible definition forms supporting packages-as-types convention for Common Lisp.
 
+## About
+
+Using the `BAPHOMET` library requires careful consideration as it may involve
+significant rewrites to your code-base. It offers many advantages for writing
+Common Lisp software, but demands sacrifice, discipline, and utter devotion in
+exchange.
+
+What you gain:
+
+- static-typing syntax for Common Lisp
+- extended type model
+- consistent definition form syntax
+- language-oriented programming support
+
+What you lose:
+
+- the packages-as-namespaces idiom
+- clean and tidy interoperability with other Lisp libraries
+
+Definer macros try to do the right thing, but at present the library doesn't
+hijack package interning for symbols to force type-validation. That means you
+can bypass the provided interface (whether accidentally or intentionally) to
+intern symbols in the wrong type-packages, change the value of a symbol to an
+invalid type for that package, and all sorts of other madness. However, if you
+stick to the interface and follow the packages-as-types convention devoutly,
+you shouldn't run into any trouble while I nitpick over the best way to enforce
+type-validation on a package basis.
+
 ## History
 
 The `BAPHOMET` library began life as a fork of [DEMACS][], went through a few
