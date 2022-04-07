@@ -19,17 +19,81 @@
 (define-package common-lisp/special-form
   (:nicknames cl/special-form special-form)
   (:recycle cl)
-  (:export))
+  (:export #:block))
 
 (define-package common-lisp/function
   (:nicknames cl/function function)
   (:recycle cl)
-  (:export))
+  (:export #:+
+           #:-
+           #:/
+           #:*
+           #:=
+           #:/=
+           #:<
+           #:>
+           #:<=
+           #:>=
+           #:abort
+           #:abs
+           #:acons
+           #:acos
+           #:acosh
+           #:adjoin
+           #:adjust-array
+           #:adjustable-array-p
+           #:alpha-char-p
+           #:alphanumericp
+           #:append
+           #:apply
+           #:apropos
+           #:apropos-list
+           #:arithmetic-error-operands
+           #:arithmetic-error-operation
+           #:array-dimension
+           #:array-dimensions
+           #:array-displacement
+           #:array-element-type
+           #:array-has-fill-pointer-p
+           #:array-in-bounds-p
+           #:array-rank
+           #:array-row-major-index
+           #:array-total-size
+           #:arrayp
+           #:ash
+           #:asin
+           #:asinh
+           #:assoc
+           #:assoc-if
+           #:assoc-if-not
+           #:atan
+           #:atanh
+           #:atom
+           #:bit-and
+           #:bit-andc1
+           #:bit-andc2
+           #:bit-eqv
+           #:bit-ior
+           #:bit-nand
+           #:bit-nor
+           #:bit-not
+           #:bit-orc1
+           #:bit-orc2
+           #:bit-xor
+           #:bit-vector-p
+           #:boole))
+
+(define-package common-lisp/accessor-function
+  (:nicknames cl/accessor-function accessor-function accessor)
+  (:recycle cl)
+  (:export #:aref
+           #:bit))
 
 (define-package common-lisp/macro-function
   (:nicknames cl/macro-function macro-function)
   (:recycle cl)
-  (:export))
+  (:export #:and
+           #:assert))
 
 (define-package common-lisp/compiler-macro
   (:nicknames cl/compiler-macro compiler-macro)
@@ -59,7 +123,8 @@
 (define-package common-lisp/generic-function
   (:nicknames cl/generic-function generic-function)
   (:recycle cl)
-  (:export))
+  (:export #:add-method
+           #:allocate-instance))
 
 (define-package common-lisp/method
   (:nicknames cl/method method)
@@ -119,22 +184,22 @@
   (:nicknames cl/type type)
   (:reexport cl/generic-interface)
   (:recycle cl)
-  (:export))
+  (:export #:atom
+           #:base-char
+           #:base-string
+           #:bignum
+           #:bit
+           #:boolean))
 
 (define-package common-lisp/class
   (:nicknames cl/class class)
   (:reexport cl/generic-interface)
   (:recycle cl)
-  (:export))
+  (:export #:array
+           #:bit-vector))
 
 (define-package common-lisp/object
   (:nicknames cl/object object)
-  (:reexport cl/generic-interface)
-  (:recycle cl)
-  (:export))
-
-(define-package common-lisp/iterator
-  (:nicknames cl/iterator iterator)
   (:reexport cl/generic-interface)
   (:recycle cl)
   (:export))
@@ -147,6 +212,21 @@
 
 (define-package common-lisp/condition
   (:nicknames cl/condition condition)
+  (:reexport cl/generic-interface)
+  (:recycle cl)
+  (:export #:arithmetic-error))
+
+;; A valid Type-Specifier is the name of a defined type, class, struct, condition,
+;; or one of the symbols below as the operator of a compound type specifier
+
+(define-package common-lisp/type-specifier
+  (:nicknames cl/type-specifier cl/typespec type-specifier typespec)
+  (:reexport cl/generic-interface cl/type cl/class cl/struct cl/condition)
+  (:recycle cl)
+  (:export #:and))
+
+(define-package common-lisp/iterator
+  (:nicknames cl/iterator iterator)
   (:reexport cl/generic-interface)
   (:recycle cl)
   (:export))
@@ -162,6 +242,18 @@
   (:reexport cl/generic-interface)
   (:recycle cl)
   (:export))
+
+(define-package common-lisp/fixnum
+  (:nicknames cl/fixnum fixnum)
+  (:recycle cl)
+  (:export))
+
+(define-package common-lisp/constant/fixnum
+  (:nicknames cl/constant/fixnum const/fixnum)
+  (:recycle cl)
+  (:export #:array-dimension-limit
+           #:array-rank-limit
+           #:array-total-size-limit))
 
 (define-package common-lisp/integer
   (:nicknames cl/integer integer)
