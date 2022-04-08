@@ -94,7 +94,33 @@
            #:ceiling
            #:cell-error-name
            #:cerror
-           #:char-code))
+           #:char-code
+           #:char-downcase
+           #:char-equal
+           #:char-greaterp
+           #:char-int
+           #:char-lessp
+           #:char-name
+           #:char-not-equal
+           #:char-not-greaterp
+           #:char-not-lessp
+           #:char-upcase
+           #:char/=
+           #:char<
+           #:char<=
+           #:char=
+           #:char>
+           #:char>=
+           #:character
+           #:characterp
+           #:cis
+           #:class-of
+           #:clear-input
+           #:clear-output
+           #:close
+           #:clrhash
+           #:code-char
+           #:coerce))
 
 (define-package common-lisp/accessor-function
   (:nicknames cl/accessor-function accessor-function accessor)
@@ -145,7 +171,8 @@
            #:assert
            #:case
            #:ccase
-           #:ecase))
+           #:ecase
+           #:check-type))
 
 (define-package common-lisp/local-macro
   (:nicknames cl/local-macro local-macro)
@@ -183,10 +210,19 @@
   (:recycle cl)
   (:export #:add-method
            #:allocate-instance
-           #:change-class))
+           #:change-class
+           #:class-name))
 
 (define-package common-lisp/method
   (:nicknames cl/method method)
+  (:reexport cl/generic-function)
+  (:recycle cl)
+  (:export))
+
+;; Declarations can be directly re-exported too
+
+(define-package common-lisp/declaration
+  (:nicknames cl/declaration declaration)
   (:recycle cl)
   (:export))
 
@@ -257,7 +293,9 @@
   (:export #:array
            #:bit-vector
            #:broadcast-stream
-           #:built-in-class))
+           #:built-in-class
+           #:character
+           #:class))
 
 (define-package common-lisp/object
   (:nicknames cl/object object)
@@ -327,7 +365,8 @@
 (define-package common-lisp/constant/integer
   (:nicknames cl/constant/integer const/integer)
   (:recycle cl)
-  (:export #:call-arguments-limit))
+  (:export #:call-arguments-limit
+           #:char-code-limit))
 
 (define-package common-lisp/real-number
   (:nicknames cl/real-number real-number)
