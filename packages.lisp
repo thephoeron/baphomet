@@ -19,7 +19,8 @@
 (define-package common-lisp/special-form
   (:nicknames cl/special-form special-form)
   (:recycle cl)
-  (:export #:block))
+  (:export #:block
+           #:catch))
 
 (define-package common-lisp/function
   (:nicknames cl/function function)
@@ -81,19 +82,76 @@
            #:bit-orc2
            #:bit-xor
            #:bit-vector-p
-           #:boole))
+           #:boole
+           #:both-case-p
+           #:boundp
+           #:break
+           #:broadcast-stream-streams
+           #:butlast
+           #:byte
+           #:byte-position
+           #:byte-size
+           #:ceiling
+           #:cell-error-name
+           #:cerror
+           #:char-code))
 
 (define-package common-lisp/accessor-function
   (:nicknames cl/accessor-function accessor-function accessor)
   (:recycle cl)
   (:export #:aref
-           #:bit))
+           #:bit
+           #:car
+           #:cdr
+           #:caar
+           #:cadr
+           #:cdar
+           #:cddr
+           #:caaar
+           #:caadr
+           #:cadar
+           #:caddr
+           #:cdaar
+           #:cdadr
+           #:cddar
+           #:cdddr
+           #:caaaar
+           #:caaadr
+           #:caadar
+           #:caaddr
+           #:cadaar
+           #:cadadr
+           #:caddar
+           #:cadddr
+           #:cdaaar
+           #:cdaadr
+           #:cdadar
+           #:cdaddr
+           #:cddaar
+           #:cddadr
+           #:cdddar
+           #:cddddr
+           #:char))
+
+(define-package common-lisp/local-function
+  (:nicknames cl/local-function local-function)
+  (:recycle cl)
+  (:export #:call-next-method))
 
 (define-package common-lisp/macro-function
   (:nicknames cl/macro-function macro-function)
   (:recycle cl)
   (:export #:and
-           #:assert))
+           #:assert
+           #:case
+           #:ccase
+           #:ecase))
+
+(define-package common-lisp/local-macro
+  (:nicknames cl/local-macro local-macro)
+  (:recycle cl)
+  (:export #:call-method
+           #:make-method))
 
 (define-package common-lisp/compiler-macro
   (:nicknames cl/compiler-macro compiler-macro)
@@ -124,7 +182,8 @@
   (:nicknames cl/generic-function generic-function)
   (:recycle cl)
   (:export #:add-method
-           #:allocate-instance))
+           #:allocate-instance
+           #:change-class))
 
 (define-package common-lisp/method
   (:nicknames cl/method method)
@@ -196,7 +255,9 @@
   (:reexport cl/generic-interface)
   (:recycle cl)
   (:export #:array
-           #:bit-vector))
+           #:bit-vector
+           #:broadcast-stream
+           #:built-in-class))
 
 (define-package common-lisp/object
   (:nicknames cl/object object)
@@ -214,7 +275,8 @@
   (:nicknames cl/condition condition)
   (:reexport cl/generic-interface)
   (:recycle cl)
-  (:export #:arithmetic-error))
+  (:export #:arithmetic-error
+           #:cell-error))
 
 ;; A valid Type-Specifier is the name of a defined type, class, struct, condition,
 ;; or one of the symbols below as the operator of a compound type specifier
@@ -245,6 +307,7 @@
 
 (define-package common-lisp/fixnum
   (:nicknames cl/fixnum fixnum)
+  (:reexport cl/generic-interface)
   (:recycle cl)
   (:export))
 
@@ -260,6 +323,11 @@
   (:reexport cl/generic-interface)
   (:recycle cl)
   (:export))
+
+(define-package common-lisp/constant/integer
+  (:nicknames cl/constant/integer const/integer)
+  (:recycle cl)
+  (:export #:call-arguments-limit))
 
 (define-package common-lisp/real-number
   (:nicknames cl/real-number real-number)
