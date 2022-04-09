@@ -120,7 +120,16 @@
            #:close
            #:clrhash
            #:code-char
-           #:coerce))
+           #:coerce
+           #:compile
+           #:compile-file
+           #:compile-file-pathname
+           #:compiled-function-p
+           #:complement
+           #:complex
+           #:complexp
+           #:compute-restarts
+           #:concatenate))
 
 (define-package common-lisp/accessor-function
   (:nicknames cl/accessor-function accessor-function accessor)
@@ -157,7 +166,8 @@
            #:cddadr
            #:cdddar
            #:cddddr
-           #:char))
+           #:char
+           #:compiler-macro-function))
 
 (define-package common-lisp/local-function
   (:nicknames cl/local-function local-function)
@@ -211,7 +221,8 @@
   (:export #:add-method
            #:allocate-instance
            #:change-class
-           #:class-name))
+           #:class-name
+           #:compute-applicable-methods))
 
 (define-package common-lisp/method
   (:nicknames cl/method method)
@@ -224,7 +235,16 @@
 (define-package common-lisp/declaration
   (:nicknames cl/declaration declaration)
   (:recycle cl)
-  (:export))
+  (:export #:optimize))
+
+(define-package common-lisp/declaration/optimize/quality
+  (:nicknames cl/decl/optimize/quality optimize-quality quality)
+  (:recycle cl)
+  (:export #:compilation-speed
+           #:debug
+           #:safety
+           #:space
+           #:speed))
 
 ;; Other objects/types share a generic interface
 
@@ -284,7 +304,8 @@
            #:base-string
            #:bignum
            #:bit
-           #:boolean))
+           #:boolean
+           #:compiled-function))
 
 (define-package common-lisp/class
   (:nicknames cl/class class)
@@ -295,7 +316,8 @@
            #:broadcast-stream
            #:built-in-class
            #:character
-           #:class))
+           #:class
+           #:complex))
 
 (define-package common-lisp/object
   (:nicknames cl/object object)
