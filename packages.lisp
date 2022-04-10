@@ -16,12 +16,34 @@
 
 ;; Funcallables are directly re-exported
 
-(define-package common-lisp/special-form
-  (:nicknames cl/special-form special-form)
+(define-package common-lisp/special-operator
+  (:nicknames cl/special-operator special-operator spec-op specop)
   (:recycle cl)
   (:export #:block
            #:catch
-           #:eval-when))
+           #:eval-when
+           #:flet
+           #:function
+           #:go
+           #:if
+           #:labels
+           #:let
+           #:let*
+           #:load-time-value
+           #:locally
+           #:macrolet
+           #:multiple-value-call
+           #:multiple-value-prog1
+           #:progn
+           #:progv
+           #:quote
+           #:return-from
+           #:setq
+           #:symbol-macrolet
+           #:tagbody
+           #:the
+           #:throw
+           #:unwind-protect))
 
 (define-package common-lisp/function
   (:nicknames cl/function function)
