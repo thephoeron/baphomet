@@ -20,7 +20,8 @@
   (:nicknames cl/special-form special-form)
   (:recycle cl)
   (:export #:block
-           #:catch))
+           #:catch
+           #:eval-when))
 
 (define-package common-lisp/function
   (:nicknames cl/function function)
@@ -129,7 +130,68 @@
            #:complex
            #:complexp
            #:compute-restarts
-           #:concatenate))
+           #:concatenate
+           #:concatenated-stream-streams
+           #:conjugate
+           #:cons
+           #:consp
+           #:constantly
+           #:constantp
+           #:continue
+           #:copy-alist
+           #:copy-list
+           #:copy-pprint-dispatch
+           #:copy-readtable
+           #:copy-seq
+           #:copy-structure
+           #:copy-symbol
+           #:copy-tree
+           #:cos
+           #:cosh
+           #:count
+           #:count-if
+           #:count-if-not
+           #:decode-float
+           #:decode-universal-time
+           #:delete
+           #:delete-duplicates
+           #:delete-file
+           #:delete-if
+           #:delete-if-not
+           #:delete-package
+           #:denominator
+           #:deposit-field
+           #:describe
+           #:digit-char
+           #:digit-char-p
+           #:directory
+           #:directory-namestring
+           #:disassemble
+           #:dpb
+           #:dribble
+           #:echo-stream-input-stream
+           #:echo-stream-output-stream
+           #:ed
+           #:encode-universal-time
+           #:endp
+           #:enough-namestring
+           #:ensure-directories-exist
+           #:ensure-generic-function
+           #:eq
+           #:eql
+           #:equal
+           #:equalp
+           #:error
+           #:eval
+           #:evenp
+           #:every
+           #:exp
+           #:expt
+           #:export
+           #:notany
+           #:notevery
+           #:oddp
+           #:some))
 
 (define-package common-lisp/accessor-function
   (:nicknames cl/accessor-function accessor-function accessor)
@@ -167,7 +229,18 @@
            #:cdddar
            #:cddddr
            #:char
-           #:compiler-macro-function))
+           #:compiler-macro-function
+           #:first
+           #:second
+           #:third
+           #:fourth
+           #:fifth
+           #:sixth
+           #:seventh
+           #:eighth
+           #:ninth
+           #:tenth
+           #:elt))
 
 (define-package common-lisp/local-function
   (:nicknames cl/local-function local-function)
@@ -182,7 +255,40 @@
            #:case
            #:ccase
            #:ecase
-           #:check-type))
+           #:check-type
+           #:cond
+           #:ctypecase
+           #:decf
+           #:declaim
+           #:defclass
+           #:defconstant
+           #:defgeneric
+           #:define-compiler-macro
+           #:define-condition
+           #:define-method-combination
+           #:define-modify-macro
+           #:define-setf-expander
+           #:define-symbol-macro
+           #:defmacro
+           #:defmethod
+           #:defpackage
+           #:defparameter
+           #:defsetf
+           #:defstruct
+           #:deftype
+           #:defun
+           #:defvar
+           #:destructuring-bind
+           #:do
+           #:do*
+           #:do-all-symbols
+           #:do-external-symbols
+           #:do-symbols
+           #:dolist
+           #:dotimes
+           #:etypecase
+           #:incf
+           #:typecase))
 
 (define-package common-lisp/local-macro
   (:nicknames cl/local-macro local-macro)
@@ -222,7 +328,9 @@
            #:allocate-instance
            #:change-class
            #:class-name
-           #:compute-applicable-methods))
+           #:compute-applicable-methods
+           #:describe-object
+           #:documentation))
 
 (define-package common-lisp/method
   (:nicknames cl/method method)
@@ -235,7 +343,16 @@
 (define-package common-lisp/declaration
   (:nicknames cl/declaration declaration)
   (:recycle cl)
-  (:export #:optimize))
+  (:export #:declaration
+           #:dynamic-extent
+           #:ftype
+           #:ignorable
+           #:ignore
+           #:inline
+           #:notinline
+           #:optimize
+           #:special
+           #:type))
 
 (define-package common-lisp/declaration/optimize/quality
   (:nicknames cl/decl/optimize/quality optimize-quality quality)
@@ -305,7 +422,12 @@
            #:bignum
            #:bit
            #:boolean
-           #:compiled-function))
+           #:compiled-function
+           #:double-float
+           #:extended-char
+           #:long-float
+           #:short-float
+           #:single-float))
 
 (define-package common-lisp/class
   (:nicknames cl/class class)
@@ -317,7 +439,10 @@
            #:built-in-class
            #:character
            #:class
-           #:complex))
+           #:complex
+           #:concatenated-stream
+           #:cons
+           #:echo-stream))
 
 (define-package common-lisp/object
   (:nicknames cl/object object)
@@ -336,7 +461,22 @@
   (:reexport cl/generic-interface)
   (:recycle cl)
   (:export #:arithmetic-error
-           #:cell-error))
+           #:cell-error
+           #:condition
+           #:control-error
+           #:division-by-zero
+           #:end-of-file
+           #:error))
+
+(define-package common-lisp/restart
+  (:nicknames cl/restart restart)
+  (:reexport cl/generic-interface)
+  (:recycle cl)
+  (:export #:abort
+           #:continue
+           #:muffle-warning
+           #:store-value
+           #:use-value))
 
 ;; A valid Type-Specifier is the name of a defined type, class, struct, condition,
 ;; or one of the symbols below as the operator of a compound type specifier
@@ -345,7 +485,8 @@
   (:nicknames cl/type-specifier cl/typespec type-specifier typespec)
   (:reexport cl/generic-interface cl/type cl/class cl/struct cl/condition)
   (:recycle cl)
-  (:export #:and))
+  (:export #:and
+           #:eql))
 
 (define-package common-lisp/iterator
   (:nicknames cl/iterator iterator)
@@ -357,7 +498,7 @@
   (:nicknames cl/symbol symbol)
   (:reexport cl/generic-interface)
   (:recycle cl)
-  (:export))
+  (:export #:declare))
 
 (define-package common-lisp/number
   (:nicknames cl/number number)
@@ -389,6 +530,27 @@
   (:recycle cl)
   (:export #:call-arguments-limit
            #:char-code-limit))
+
+;; Will need to create type-packages for double, long, short, and single floats,
+;; and reexport them in cl/float, and likewise for cl/constant/float. Ech.
+
+(define-package common-lisp/float
+  (:nicknames cl/float float)
+  (:reexport cl/generic-interface)
+  (:recycle cl)
+  (:export))
+
+(define-package common-lisp/constant/float
+  (:nicknames cl/constant/float const/float)
+  (:recycle cl)
+  (:export #:double-float-epsilon
+           #:double-float-negative-epsilon
+           #:long-float-epsilon
+           #:long-float-negative-epsilon
+           #:short-float-epsilon
+           #:short-float-negative-epsilon
+           #:single-float-epsilon
+           #:single-float-negative-epsilon))
 
 (define-package common-lisp/real-number
   (:nicknames cl/real-number real-number)
