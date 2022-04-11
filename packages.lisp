@@ -210,6 +210,26 @@
            #:exp
            #:expt
            #:export
+           #:fboundp
+           #:fceiling
+           #:ffloor
+           #:file-author
+           #:file-error-pathname
+           #:file-length
+           #:file-namestring
+           #:file-position
+           #:file-string-length
+           #:file-write-date
+           #:fill
+           #:find
+           #:find-if
+           #:find-if-not
+           #:find-all-symbols
+           #:find-package
+           #:find-restart
+           #:find-symbol
+           #:finish-output
+           #:float
            #:notany
            #:notevery
            #:oddp
@@ -262,7 +282,10 @@
            #:eighth
            #:ninth
            #:tenth
-           #:elt))
+           #:elt
+           #:fdefinition
+           #:fill-pointer
+           #:find-class))
 
 (define-package common-lisp/local-function
   (:nicknames cl/local-function local-function)
@@ -352,7 +375,8 @@
            #:class-name
            #:compute-applicable-methods
            #:describe-object
-           #:documentation))
+           #:documentation
+           #:find-method))
 
 (define-package common-lisp/method
   (:nicknames cl/method method)
@@ -447,6 +471,7 @@
            #:compiled-function
            #:double-float
            #:extended-char
+           #:fixnum
            #:long-float
            #:short-float
            #:single-float))
@@ -464,7 +489,9 @@
            #:complex
            #:concatenated-stream
            #:cons
-           #:echo-stream))
+           #:echo-stream
+           #:file-stream
+           #:float))
 
 (define-package common-lisp/object
   (:nicknames cl/object object)
@@ -488,7 +515,8 @@
            #:control-error
            #:division-by-zero
            #:end-of-file
-           #:error))
+           #:error
+           #:file-error))
 
 (define-package common-lisp/restart
   (:nicknames cl/restart restart)
