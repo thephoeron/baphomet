@@ -266,6 +266,22 @@
            #:hash-table-test
            #:host-namestring
            #:identity
+           #:imagpart
+           #:import
+           #:input-stream-p
+           #:inspect
+           #:integer-decode-float
+           #:integer-length
+           #:integerp
+           #:interactive-stream-p
+           #:intern
+           #:intersection
+           #:invalid-method-error
+           #:invoke-debugger
+           #:invoke-restart
+           #:invoke-restart-interactively
+           #:isqrt
+           #:keywordp
            #:notany
            #:notevery
            #:oddp
@@ -374,6 +390,8 @@
            #:formatter
            #:handler-bind
            #:handler-case
+           #:ignore-errors
+           #:in-package
            #:incf
            #:typecase))
 
@@ -419,7 +437,8 @@
            #:describe-object
            #:documentation
            #:find-method
-           #:function-keywords))
+           #:function-keywords
+           #:initialize-instance))
 
 (define-package common-lisp/method
   (:nicknames cl/method method)
@@ -515,6 +534,7 @@
            #:double-float
            #:extended-char
            #:fixnum
+           #:keyword
            #:long-float
            #:short-float
            #:single-float))
@@ -537,7 +557,8 @@
            #:float
            #:function
            #:generic-function
-           #:hash-table))
+           #:hash-table
+           #:integer))
 
 (define-package common-lisp/object
   (:nicknames cl/object object)
@@ -630,7 +651,8 @@
   (:nicknames cl/constant/integer const/integer)
   (:recycle cl)
   (:export #:call-arguments-limit
-           #:char-code-limit))
+           #:char-code-limit
+           #:internal-time-units-per-second))
 
 ;; Will need to create type-packages for double, long, short, and single floats,
 ;; and reexport them in cl/float, and likewise for cl/constant/float. Ech.
