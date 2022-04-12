@@ -230,6 +230,42 @@
            #:find-symbol
            #:finish-output
            #:float
+           #:float-digits
+           #:float-precision
+           #:float-radix
+           #:float-sign
+           #:floatp
+           #:floor
+           #:fmakunbound
+           #:force-output
+           #:format
+           #:fresh-line
+           #:fround
+           #:ftruncate
+           #:funcall
+           #:function-lambda-expression
+           #:functionp
+           #:gcd
+           #:gensym
+           #:gentemp
+           #:get-decoded-time
+           #:get-dispatch-macro-character
+           #:get-internal-real-time
+           #:get-internal-run-time
+           #:get-macro-character
+           #:get-output-stream-string
+           #:get-properties
+           #:get-setf-expansion
+           #:get-universal-time
+           #:graphic-char-p
+           #:hash-table-count
+           #:hash-table-p
+           #:hash-table-rehash-size
+           #:hash-table-rehash-threshold
+           #:hash-table-size
+           #:hash-table-test
+           #:host-namestring
+           #:identity
            #:notany
            #:notevery
            #:oddp
@@ -285,7 +321,10 @@
            #:elt
            #:fdefinition
            #:fill-pointer
-           #:find-class))
+           #:find-class
+           #:get
+           #:getf
+           #:gethash))
 
 (define-package common-lisp/local-function
   (:nicknames cl/local-function local-function)
@@ -332,6 +371,9 @@
            #:dolist
            #:dotimes
            #:etypecase
+           #:formatter
+           #:handler-bind
+           #:handler-case
            #:incf
            #:typecase))
 
@@ -376,7 +418,8 @@
            #:compute-applicable-methods
            #:describe-object
            #:documentation
-           #:find-method))
+           #:find-method
+           #:function-keywords))
 
 (define-package common-lisp/method
   (:nicknames cl/method method)
@@ -491,7 +534,10 @@
            #:cons
            #:echo-stream
            #:file-stream
-           #:float))
+           #:float
+           #:function
+           #:generic-function
+           #:hash-table))
 
 (define-package common-lisp/object
   (:nicknames cl/object object)
@@ -516,7 +562,11 @@
            #:division-by-zero
            #:end-of-file
            #:error
-           #:file-error))
+           #:file-error
+           #:floating-point-inexact
+           #:floating-point-invalid-operation
+           #:floating-point-overflow
+           #:floating-point-underflow))
 
 (define-package common-lisp/restart
   (:nicknames cl/restart restart)
@@ -548,7 +598,8 @@
   (:nicknames cl/symbol symbol)
   (:reexport cl/generic-interface)
   (:recycle cl)
-  (:export #:declare))
+  (:export #:declare
+           #:function))
 
 (define-package common-lisp/number
   (:nicknames cl/number number)
