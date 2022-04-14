@@ -282,10 +282,16 @@
            #:invoke-restart-interactively
            #:isqrt
            #:keywordp
+           #:last
+           #:lcm
+           #:ldb-test
+           #:ldiff
+           #:length
            #:notany
            #:notevery
            #:oddp
-           #:some))
+           #:some
+           #:tailp))
 
 (define-package common-lisp/accessor-function
   (:nicknames cl/accessor-function accessor-function accessor)
@@ -340,7 +346,8 @@
            #:find-class
            #:get
            #:getf
-           #:gethash))
+           #:gethash
+           #:ldb))
 
 (define-package common-lisp/local-function
   (:nicknames cl/local-function local-function)
@@ -393,6 +400,7 @@
            #:ignore-errors
            #:in-package
            #:incf
+           #:lambda
            #:typecase))
 
 (define-package common-lisp/local-macro
@@ -620,7 +628,8 @@
   (:reexport cl/generic-interface)
   (:recycle cl)
   (:export #:declare
-           #:function))
+           #:function
+           #:lambda))
 
 (define-package common-lisp/number
   (:nicknames cl/number number)
@@ -652,7 +661,8 @@
   (:recycle cl)
   (:export #:call-arguments-limit
            #:char-code-limit
-           #:internal-time-units-per-second))
+           #:internal-time-units-per-second
+           #:lambda-parameters-limit))
 
 ;; Will need to create type-packages for double, long, short, and single floats,
 ;; and reexport them in cl/float, and likewise for cl/constant/float. Ech.
@@ -734,6 +744,12 @@
   (:reexport cl/generic-interface)
   (:recycle cl)
   (:export))
+
+(define-package common-lisp/constant/list
+  (:nicknames cl/constant/list const/list)
+  (:reexport cl/generic-interface)
+  (:recycle cl)
+  (:export #:lambda-list-keywords))
 
 (define-package common-lisp/association-list
   (:nicknames cl/association-list association-list)
