@@ -683,7 +683,23 @@
            #:short-float-epsilon
            #:short-float-negative-epsilon
            #:single-float-epsilon
-           #:single-float-negative-epsilon))
+           #:single-float-negative-epsilon
+           #:least-negative-double-float
+           #:least-negative-long-float
+           #:least-negative-normalized-double-float
+           #:least-negative-normalized-long-float
+           #:least-negative-normalized-short-float
+           #:least-negative-normalized-single-float
+           #:least-negative-short-float
+           #:least-negative-single-float
+           #:least-positive-double-float
+           #:least-positive-long-float
+           #:least-positive-normalized-double-float
+           #:least-positive-normalized-long-float
+           #:least-positive-normalized-short-float
+           #:least-positive-normalized-single-float
+           #:least-positive-short-float
+           #:least-positive-single-float))
 
 (define-package common-lisp/real-number
   (:nicknames cl/real-number real-number)
