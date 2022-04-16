@@ -287,6 +287,34 @@
            #:ldb-test
            #:ldiff
            #:length
+           #:lisp-implementation-type
+           #:lisp-implementation-version
+           #:list
+           #:list*
+           #:list-all-packages
+           #:list-length
+           #:listen
+           #:listp
+           #:load
+           #:load-logical-pathname-translations
+           #:log
+           #:logand
+           #:logandc1
+           #:logandc2
+           #:logeqv
+           #:logior
+           #:lognand
+           #:lognor
+           #:lognot
+           #:logorc1
+           #:logorc2
+           #:logxor
+           #:logtest
+           #:logbitp
+           #:logcount
+           #:logical-pathname
+           #:long-site-name
+           #:lower-case-p
            #:notany
            #:notevery
            #:oddp
@@ -347,7 +375,8 @@
            #:get
            #:getf
            #:gethash
-           #:ldb))
+           #:ldb
+           #:logical-pathname-translations))
 
 (define-package common-lisp/local-function
   (:nicknames cl/local-function local-function)
@@ -401,13 +430,15 @@
            #:in-package
            #:incf
            #:lambda
+           #:loop
            #:typecase))
 
 (define-package common-lisp/local-macro
   (:nicknames cl/local-macro local-macro)
   (:recycle cl)
   (:export #:call-method
-           #:make-method))
+           #:make-method
+           #:loop-finish))
 
 (define-package common-lisp/compiler-macro
   (:nicknames cl/compiler-macro compiler-macro)
@@ -566,7 +597,9 @@
            #:function
            #:generic-function
            #:hash-table
-           #:integer))
+           #:integer
+           #:list
+           #:logical-pathname))
 
 (define-package common-lisp/object
   (:nicknames cl/object object)
