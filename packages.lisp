@@ -315,6 +315,11 @@
            #:logical-pathname
            #:long-site-name
            #:lower-case-p
+           #:machine-instance
+           #:machine-type
+           #:machine-version
+           #:macroexpand
+           #:macroexpand-1
            #:notany
            #:notevery
            #:oddp
@@ -376,7 +381,8 @@
            #:getf
            #:gethash
            #:ldb
-           #:logical-pathname-translations))
+           #:logical-pathname-translations
+           #:macro-function))
 
 (define-package common-lisp/local-function
   (:nicknames cl/local-function local-function)
