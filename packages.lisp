@@ -320,6 +320,7 @@
            #:machine-version
            #:macroexpand
            #:macroexpand-1
+           #:make-array
            #:notany
            #:notevery
            #:oddp
