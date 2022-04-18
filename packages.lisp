@@ -321,9 +321,49 @@
            #:macroexpand
            #:macroexpand-1
            #:make-array
+           #:make-broadcast-stream
+           #:make-concatenated-stream
+           #:make-condition
+           #:make-dispatch-macro-character
+           #:make-echo-stream
+           #:make-hash-table
+           #:make-list
+           #:make-load-form-saving-slots
+           #:make-package
+           #:make-pathname
+           #:make-random-state
+           #:make-sequence
+           #:make-string
+           #:make-string-input-stream
+           #:make-string-output-stream
+           #:make-symbol
+           #:make-synonym-stream
+           #:make-two-way-stream
+           #:makunbound
+           #:map
+           #:map-into
+           #:mapc
+           #:mapcar
+           #:mapcan
+           #:mapl
+           #:maplist
+           #:mapcon
+           #:maphash
+           #:max
+           #:member
+           #:member-if
+           #:member-if-not
+           #:merge
+           #:merge-pathnames
+           #:method-combination-error
+           #:min
+           #:minusp
+           #:mismatch
+           #:mod
            #:notany
            #:notevery
            #:oddp
+           #:plusp
            #:some
            #:tailp))
 
@@ -383,7 +423,8 @@
            #:gethash
            #:ldb
            #:logical-pathname-translations
-           #:macro-function))
+           #:macro-function
+           #:mask-field))
 
 (define-package common-lisp/local-function
   (:nicknames cl/local-function local-function)
@@ -484,7 +525,11 @@
            #:documentation
            #:find-method
            #:function-keywords
-           #:initialize-instance))
+           #:initialize-instance
+           #:make-instance
+           #:make-instances-obsolete
+           #:make-load-form
+           #:method-qualifiers))
 
 (define-package common-lisp/method
   (:nicknames cl/method method)
@@ -606,7 +651,9 @@
            #:hash-table
            #:integer
            #:list
-           #:logical-pathname))
+           #:logical-pathname
+           #:method
+           #:method-combination))
 
 (define-package common-lisp/object
   (:nicknames cl/object object)
@@ -655,7 +702,9 @@
   (:reexport cl/generic-interface cl/type cl/class cl/struct cl/condition)
   (:recycle cl)
   (:export #:and
-           #:eql))
+           #:eql
+           #:member
+           #:mod))
 
 (define-package common-lisp/iterator
   (:nicknames cl/iterator iterator)
@@ -669,7 +718,8 @@
   (:recycle cl)
   (:export #:declare
            #:function
-           #:lambda))
+           #:lambda
+           #:method-combination))
 
 (define-package common-lisp/number
   (:nicknames cl/number number)
