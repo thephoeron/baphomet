@@ -360,6 +360,8 @@
            #:minusp
            #:mismatch
            #:mod
+           #:muffle-warning
+           #:name-char
            #:notany
            #:notevery
            #:oddp
@@ -479,6 +481,9 @@
            #:incf
            #:lambda
            #:loop
+           #:multiple-value-bind
+           #:multiple-value-list
+           #:multiple-value-setq
            #:typecase))
 
 (define-package common-lisp/local-macro
@@ -752,7 +757,8 @@
   (:export #:call-arguments-limit
            #:char-code-limit
            #:internal-time-units-per-second
-           #:lambda-parameters-limit))
+           #:lambda-parameters-limit
+           #:multiple-values-limit))
 
 ;; Will need to create type-packages for double, long, short, and single floats,
 ;; and reexport them in cl/float, and likewise for cl/constant/float. Ech.
@@ -789,7 +795,17 @@
            #:least-positive-normalized-short-float
            #:least-positive-normalized-single-float
            #:least-positive-short-float
-           #:least-positive-single-float))
+           #:least-positive-single-float
+           #:most-negative-double-float
+           #:most-negative-fixnum
+           #:most-negative-long-float
+           #:most-negative-short-float
+           #:most-negative-single-float
+           #:most-positive-double-float
+           #:most-positive-fixnum
+           #:most-positive-long-float
+           #:most-positive-short-float
+           #:most-positive-single-float))
 
 (define-package common-lisp/real-number
   (:nicknames cl/real-number real-number)
