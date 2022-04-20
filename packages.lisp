@@ -362,9 +362,34 @@
            #:mod
            #:muffle-warning
            #:name-char
+           #:namestring
+           #:nbutlast
+           #:nconc
+           #:nintersection
+           #:not
            #:notany
            #:notevery
+           #:nreconc
+           #:nreverse
+           #:nset-difference
+           #:nset-exclusive-or
+           #:nstring-capitalize
+           #:nstring-downcase
+           #:nstring-upcase
+           #:nsublis
+           #:nsubst
+           #:nsubst-if
+           #:nsubst-if-not
+           #:nsubstitute
+           #:nsubstitute-if
+           #:nsubstitute-if-not
+           #:nthcdr
+           #:null
+           #:numberp
+           #:numerator
+           #:nunion
            #:oddp
+           #:open
            #:plusp
            #:some
            #:tailp))
@@ -426,12 +451,14 @@
            #:ldb
            #:logical-pathname-translations
            #:macro-function
-           #:mask-field))
+           #:mask-field
+           #:nth))
 
 (define-package common-lisp/local-function
   (:nicknames cl/local-function local-function)
   (:recycle cl)
-  (:export #:call-next-method))
+  (:export #:call-next-method
+           #:next-method-p))
 
 (define-package common-lisp/macro-function
   (:nicknames cl/macro-function macro-function)
@@ -484,6 +511,7 @@
            #:multiple-value-bind
            #:multiple-value-list
            #:multiple-value-setq
+           #:nth-value
            #:typecase))
 
 (define-package common-lisp/local-macro
@@ -534,7 +562,9 @@
            #:make-instance
            #:make-instances-obsolete
            #:make-load-form
-           #:method-qualifiers))
+           #:method-qualifiers
+           #:no-applicable-method
+           #:no-next-method))
 
 (define-package common-lisp/method
   (:nicknames cl/method method)
@@ -632,6 +662,7 @@
            #:fixnum
            #:keyword
            #:long-float
+           #:nil
            #:short-float
            #:single-float))
 
@@ -658,7 +689,9 @@
            #:list
            #:logical-pathname
            #:method
-           #:method-combination))
+           #:method-combination
+           #:null
+           #:number))
 
 (define-package common-lisp/object
   (:nicknames cl/object object)
@@ -709,13 +742,14 @@
   (:export #:and
            #:eql
            #:member
-           #:mod))
+           #:mod
+           #:not))
 
-(define-package common-lisp/iterator
-  (:nicknames cl/iterator iterator)
-  (:reexport cl/generic-interface)
+(define-package common-lisp/boolean
+  (:nicknames cl/boolean boolean)
   (:recycle cl)
-  (:export))
+  (:export #:nil
+           #:t))
 
 (define-package common-lisp/symbol
   (:nicknames cl/symbol symbol)
@@ -865,7 +899,7 @@
   (:nicknames cl/list list)
   (:reexport cl/generic-interface)
   (:recycle cl)
-  (:export))
+  (:export #:nil))
 
 (define-package common-lisp/constant/list
   (:nicknames cl/constant/list const/list)
