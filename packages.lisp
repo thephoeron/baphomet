@@ -390,6 +390,8 @@
            #:nunion
            #:oddp
            #:open
+           #:open-stream-p
+           #:output-stream-p
            #:plusp
            #:some
            #:tailp))
@@ -512,6 +514,7 @@
            #:multiple-value-list
            #:multiple-value-setq
            #:nth-value
+           #:or
            #:typecase))
 
 (define-package common-lisp/local-macro
@@ -743,7 +746,8 @@
            #:eql
            #:member
            #:mod
-           #:not))
+           #:not
+           #:or))
 
 (define-package common-lisp/boolean
   (:nicknames cl/boolean boolean)
@@ -758,7 +762,8 @@
   (:export #:declare
            #:function
            #:lambda
-           #:method-combination))
+           #:method-combination
+           #:otherwise))
 
 (define-package common-lisp/number
   (:nicknames cl/number number)
