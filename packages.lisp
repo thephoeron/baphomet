@@ -392,7 +392,49 @@
            #:open
            #:open-stream-p
            #:output-stream-p
+           #:package-error-package
+           #:package-name
+           #:package-nicknames
+           #:package-shadowing-symbols
+           #:package-use-list
+           #:package-used-by-list
+           #:packagep
+           #:pairlis
+           #:parse-integer
+           #:parse-namestring
+           #:pathname
+           #:pathname-device
+           #:pathname-directory
+           #:pathname-host
+           #:pathname-match-p
+           #:pathname-name
+           #:pathname-type
+           #:pathname-version
+           #:pathnamep
+           #:peek-char
+           #:phase
            #:plusp
+           #:position
+           #:position-if
+           #:position-if-not
+           #:pprint
+           #:pprint-dispatch
+           #:pprint-fill
+           #:pprint-indent
+           #:pprint-linear
+           #:pprint-newline
+           #:pprint-tab
+           #:pprint-tabular
+           #:prin1
+           #:prin1-to-string
+           #:princ
+           #:princ-to-string
+           #:print
+           #:print-not-readable-object
+           #:probe-file
+           #:proclaim
+           #:provide
+           #:random
            #:some
            #:tailp))
 
@@ -515,6 +557,17 @@
            #:multiple-value-setq
            #:nth-value
            #:or
+           #:pop
+           #:pprint-logical-block
+           #:print-unreadable-object
+           #:prog
+           #:prog*
+           #:prog1
+           #:prog2
+           #:psetf
+           #:psetq
+           #:push
+           #:pushnew
            #:typecase))
 
 (define-package common-lisp/local-macro
@@ -522,7 +575,9 @@
   (:recycle cl)
   (:export #:call-method
            #:make-method
-           #:loop-finish))
+           #:loop-finish
+           #:pprint-exit-if-list-exhausted
+           #:pprint-pop))
 
 (define-package common-lisp/compiler-macro
   (:nicknames cl/compiler-macro compiler-macro)
@@ -567,7 +622,8 @@
            #:make-load-form
            #:method-qualifiers
            #:no-applicable-method
-           #:no-next-method))
+           #:no-next-method
+           #:print-object))
 
 (define-package common-lisp/method
   (:nicknames cl/method method)
@@ -694,7 +750,9 @@
            #:method
            #:method-combination
            #:null
-           #:number))
+           #:number
+           #:package
+           #:pathname))
 
 (define-package common-lisp/object
   (:nicknames cl/object object)
@@ -723,7 +781,11 @@
            #:floating-point-inexact
            #:floating-point-invalid-operation
            #:floating-point-overflow
-           #:floating-point-underflow))
+           #:floating-point-underflow
+           #:package-error
+           #:parse-error
+           #:print-not-readable
+           #:program-error))
 
 (define-package common-lisp/restart
   (:nicknames cl/restart restart)
@@ -844,7 +906,8 @@
            #:most-positive-fixnum
            #:most-positive-long-float
            #:most-positive-short-float
-           #:most-positive-single-float))
+           #:most-positive-single-float
+           #:pi))
 
 (define-package common-lisp/real-number
   (:nicknames cl/real-number real-number)
