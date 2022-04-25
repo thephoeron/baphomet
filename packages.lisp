@@ -435,6 +435,44 @@
            #:proclaim
            #:provide
            #:random
+           #:random-state-p
+           #:rassoc
+           #:rassoc-if
+           #:rassoc-if-not
+           #:rational
+           #:rationalize
+           #:rationalp
+           #:read
+           #:read-byte
+           #:read-char
+           #:read-char-no-hang
+           #:read-delimited-list
+           #:read-from-string
+           #:read-line
+           #:read-preserving-whitespace
+           #:read-sequence
+           #:readtablep
+           #:realp
+           #:realpart
+           #:reduce
+           #:rem
+           #:remhash
+           #:remove
+           #:remove-if
+           #:remove-if-not
+           #:remove-duplicates
+           #:remprop
+           #:rename-file
+           #:rename-package
+           #:replace
+           #:require
+           #:restart-name
+           #:revappend
+           #:reverse
+           #:room
+           #:round
+           #:rplaca
+           #:rplacd
            #:some
            #:tailp))
 
@@ -496,7 +534,10 @@
            #:logical-pathname-translations
            #:macro-function
            #:mask-field
-           #:nth))
+           #:nth
+           #:readtable-case
+           #:rest
+           #:row-major-aref))
 
 (define-package common-lisp/local-function
   (:nicknames cl/local-function local-function)
@@ -568,6 +609,11 @@
            #:psetq
            #:push
            #:pushnew
+           #:remf
+           #:restart-bind
+           #:restart-case
+           #:return
+           #:rotatef
            #:typecase))
 
 (define-package common-lisp/local-macro
@@ -623,7 +669,9 @@
            #:method-qualifiers
            #:no-applicable-method
            #:no-next-method
-           #:print-object))
+           #:print-object
+           #:reinitialize-instance
+           #:remove-method))
 
 (define-package common-lisp/method
   (:nicknames cl/method method)
@@ -752,7 +800,13 @@
            #:null
            #:number
            #:package
-           #:pathname))
+           #:pathname
+           #:random-state
+           #:ratio
+           #:rational
+           #:readtable
+           #:real
+           #:restart))
 
 (define-package common-lisp/object
   (:nicknames cl/object object)
@@ -785,7 +839,8 @@
            #:package-error
            #:parse-error
            #:print-not-readable
-           #:program-error))
+           #:program-error
+           #:reader-error))
 
 (define-package common-lisp/restart
   (:nicknames cl/restart restart)
@@ -809,7 +864,8 @@
            #:member
            #:mod
            #:not
-           #:or))
+           #:or
+           #:satisfies))
 
 (define-package common-lisp/boolean
   (:nicknames cl/boolean boolean)
