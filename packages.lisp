@@ -473,7 +473,39 @@
            #:round
            #:rplaca
            #:rplacd
+           #:scale-float
+           #:search
+           #:set
+           #:set-difference
+           #:set-dispatch-macro-character
+           #:set-exclusive-or
+           #:set-macro-character
+           #:set-pprint-dispatch
+           #:set-syntax-from-char
+           #:shadow
+           #:shadowing-import
+           #:short-site-name
+           #:signal
+           #:signum
+           #:simple-bit-vector-p
+           #:simple-condition-format-arguments
+           #:simple-condition-format-control
+           #:simple-string-p
+           #:simple-vector-p
+           #:sin
+           #:sinh
+           #:sleep
+           #:slot-boundp
+           #:slot-exists-p
+           #:slot-makunbound
+           #:slot-value
+           #:software-type
+           #:software-version
            #:some
+           #:sort
+           #:special-operator-p
+           #:sqrt
+           #:stable-sort
            #:tailp))
 
 (define-package common-lisp/accessor-function
@@ -537,7 +569,9 @@
            #:nth
            #:readtable-case
            #:rest
-           #:row-major-aref))
+           #:row-major-aref
+           #:sbit
+           #:schar))
 
 (define-package common-lisp/local-function
   (:nicknames cl/local-function local-function)
@@ -614,6 +648,8 @@
            #:restart-case
            #:return
            #:rotatef
+           #:setf
+           #:shiftf
            #:typecase))
 
 (define-package common-lisp/local-macro
@@ -671,7 +707,10 @@
            #:no-next-method
            #:print-object
            #:reinitialize-instance
-           #:remove-method))
+           #:remove-method
+           #:shared-initialize
+           #:slot-missing
+           #:slot-unbound))
 
 (define-package common-lisp/method
   (:nicknames cl/method method)
@@ -771,7 +810,13 @@
            #:long-float
            #:nil
            #:short-float
-           #:single-float))
+           #:single-float
+           #:signed-byte
+           #:simple-array
+           #:simple-base-string
+           #:simple-bit-vector
+           #:simple-string
+           #:simple-vector))
 
 (define-package common-lisp/class
   (:nicknames cl/class class)
@@ -806,7 +851,8 @@
            #:rational
            #:readtable
            #:real
-           #:restart))
+           #:restart
+           #:sequence))
 
 (define-package common-lisp/object
   (:nicknames cl/object object)
@@ -840,7 +886,12 @@
            #:parse-error
            #:print-not-readable
            #:program-error
-           #:reader-error))
+           #:reader-error
+           #:serious-condition
+           #:simple-condition
+           #:simple-error
+           #:simple-type-error
+           #:simple-warning))
 
 (define-package common-lisp/restart
   (:nicknames cl/restart restart)
@@ -881,7 +932,8 @@
            #:function
            #:lambda
            #:method-combination
-           #:otherwise))
+           #:otherwise
+           #:setf))
 
 (define-package common-lisp/number
   (:nicknames cl/number number)
