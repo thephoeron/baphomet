@@ -506,6 +506,46 @@
            #:special-operator-p
            #:sqrt
            #:stable-sort
+           #:standard-char-p
+           #:store-value
+           #:stream-element-type
+           #:stream-error-stream
+           #:stream-external-format
+           #:streamp
+           #:string
+           #:string-capitalize
+           #:string-downcase
+           #:string-equal
+           #:string-greaterp
+           #:string-left-trim
+           #:string-lessp
+           #:string-not-equal
+           #:string-not-greaterp
+           #:string-not-lessp
+           #:string-right-trim
+           #:string-trim
+           #:string-upcase
+           #:string/=
+           #:string<
+           #:string<=
+           #:string=
+           #:string>
+           #:string>=
+           #:stringp
+           #:sublis
+           #:subsetp
+           #:subst
+           #:subst-if
+           #:subst-if-not
+           #:substitute
+           #:substitute-if
+           #:substitute-if-not
+           #:subtypep
+           #:sxhash
+           #:symbol-name
+           #:symbol-package
+           #:symbolp
+           #:synonym-stream-symbol
            #:tailp))
 
 (define-package common-lisp/accessor-function
@@ -571,7 +611,12 @@
            #:rest
            #:row-major-aref
            #:sbit
-           #:schar))
+           #:schar
+           #:subseq
+           #:svref
+           #:symbol-function
+           #:symbol-plist
+           #:symbol-value))
 
 (define-package common-lisp/local-function
   (:nicknames cl/local-function local-function)
@@ -650,6 +695,7 @@
            #:rotatef
            #:setf
            #:shiftf
+           #:step
            #:typecase))
 
 (define-package common-lisp/local-macro
@@ -816,7 +862,8 @@
            #:simple-base-string
            #:simple-bit-vector
            #:simple-string
-           #:simple-vector))
+           #:simple-vector
+           #:standard-char))
 
 (define-package common-lisp/class
   (:nicknames cl/class class)
@@ -852,7 +899,19 @@
            #:readtable
            #:real
            #:restart
-           #:sequence))
+           #:sequence
+           #:standard-class
+           #:standard-generic-function
+           #:standard-method
+           #:standard-object
+           #:stream
+           #:string
+           #:string-stream
+           #:structure-class
+           #:structure-object
+           #:symbol
+           #:synonym-stream
+           #:t))
 
 (define-package common-lisp/object
   (:nicknames cl/object object)
@@ -891,7 +950,10 @@
            #:simple-condition
            #:simple-error
            #:simple-type-error
-           #:simple-warning))
+           #:simple-warning
+           #:storage-condition
+           #:stream-error
+           #:style-warning))
 
 (define-package common-lisp/restart
   (:nicknames cl/restart restart)
@@ -933,7 +995,9 @@
            #:lambda
            #:method-combination
            #:otherwise
-           #:setf))
+           #:setf
+           #:structure
+           #:t))
 
 (define-package common-lisp/number
   (:nicknames cl/number number)
