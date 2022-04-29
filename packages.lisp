@@ -560,7 +560,18 @@
            #:type-error-datum
            #:type-error-expected-type
            #:type-of
-           #:typep))
+           #:typep
+           #:unbound-slot-instance
+           #:unexport
+           #:unintern
+           #:union
+           #:unread-char
+           #:upgraded-array-element-type
+           #:upgraded-complex-part-type
+           #:upper-case-p
+           #:use-package
+           #:use-value
+           #:user-homedir-pathname))
 
 (define-package common-lisp/accessor-function
   (:nicknames cl/accessor-function accessor-function accessor)
@@ -713,7 +724,10 @@
            #:time
            #:trace
            #:typecase
-           #:untrace))
+           #:untrace
+           #:unless
+           #:unuse-package
+           #:when))
 
 (define-package common-lisp/local-macro
   (:nicknames cl/local-macro local-macro)
@@ -773,7 +787,9 @@
            #:remove-method
            #:shared-initialize
            #:slot-missing
-           #:slot-unbound))
+           #:slot-unbound
+           #:update-instance-for-different-class
+           #:update-instance-for-redefined-class))
 
 (define-package common-lisp/method
   (:nicknames cl/method method)
@@ -880,7 +896,8 @@
            #:simple-bit-vector
            #:simple-string
            #:simple-vector
-           #:standard-char))
+           #:standard-char
+           #:unsigned-byte))
 
 (define-package common-lisp/class
   (:nicknames cl/class class)
@@ -972,7 +989,10 @@
            #:storage-condition
            #:stream-error
            #:style-warning
-           #:type-error))
+           #:type-error
+           #:unbound-slot
+           #:unbound-variable
+           #:undefined-function))
 
 (define-package common-lisp/restart
   (:nicknames cl/restart restart)
