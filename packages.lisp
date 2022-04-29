@@ -546,7 +546,21 @@
            #:symbol-package
            #:symbolp
            #:synonym-stream-symbol
-           #:tailp))
+           #:tailp
+           #:tan
+           #:tanh
+           #:terpri
+           #:translate-logical-pathname
+           #:translate-pathname
+           #:tree-equal
+           #:truename
+           #:truncate
+           #:two-way-stream-input-stream
+           #:two-way-stream-output-stream
+           #:type-error-datum
+           #:type-error-expected-type
+           #:type-of
+           #:typep))
 
 (define-package common-lisp/accessor-function
   (:nicknames cl/accessor-function accessor-function accessor)
@@ -696,7 +710,10 @@
            #:setf
            #:shiftf
            #:step
-           #:typecase))
+           #:time
+           #:trace
+           #:typecase
+           #:untrace))
 
 (define-package common-lisp/local-macro
   (:nicknames cl/local-macro local-macro)
@@ -911,7 +928,8 @@
            #:structure-object
            #:symbol
            #:synonym-stream
-           #:t))
+           #:t
+           #:two-way-stream))
 
 (define-package common-lisp/object
   (:nicknames cl/object object)
@@ -953,7 +971,8 @@
            #:simple-warning
            #:storage-condition
            #:stream-error
-           #:style-warning))
+           #:style-warning
+           #:type-error))
 
 (define-package common-lisp/restart
   (:nicknames cl/restart restart)
@@ -997,7 +1016,8 @@
            #:otherwise
            #:setf
            #:structure
-           #:t))
+           #:t
+           #:type))
 
 (define-package common-lisp/number
   (:nicknames cl/number number)
