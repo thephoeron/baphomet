@@ -571,7 +571,13 @@
            #:upper-case-p
            #:use-package
            #:use-value
-           #:user-homedir-pathname))
+           #:user-homedir-pathname
+           #:values-list
+           #:vector
+           #:vector-pop
+           #:vector-push
+           #:vector-push-extend
+           #:vectorp))
 
 (define-package common-lisp/accessor-function
   (:nicknames cl/accessor-function accessor-function accessor)
@@ -641,7 +647,8 @@
            #:svref
            #:symbol-function
            #:symbol-plist
-           #:symbol-value))
+           #:symbol-value
+           #:values))
 
 (define-package common-lisp/local-function
   (:nicknames cl/local-function local-function)
@@ -946,7 +953,8 @@
            #:symbol
            #:synonym-stream
            #:t
-           #:two-way-stream))
+           #:two-way-stream
+           #:vector))
 
 (define-package common-lisp/object
   (:nicknames cl/object object)
@@ -1017,7 +1025,8 @@
            #:mod
            #:not
            #:or
-           #:satisfies))
+           #:satisfies
+           #:values))
 
 (define-package common-lisp/boolean
   (:nicknames cl/boolean boolean)
@@ -1037,7 +1046,8 @@
            #:setf
            #:structure
            #:t
-           #:type))
+           #:type
+           #:variable))
 
 (define-package common-lisp/number
   (:nicknames cl/number number)
