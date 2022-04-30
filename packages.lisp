@@ -58,6 +58,8 @@
            #:>
            #:<=
            #:>=
+           #:1+
+           #:1-
            #:abort
            #:abs
            #:acons
@@ -577,7 +579,19 @@
            #:vector-pop
            #:vector-push
            #:vector-push-extend
-           #:vectorp))
+           #:vectorp
+           #:warn
+           #:wild-pathname-p
+           #:write
+           #:write-byte
+           #:write-char
+           #:write-line
+           #:write-sequence
+           #:write-string
+           #:write-to-string
+           #:y-or-n-p
+           #:yes-or-no-p
+           #:zerop))
 
 (define-package common-lisp/accessor-function
   (:nicknames cl/accessor-function accessor-function accessor)
@@ -734,7 +748,19 @@
            #:untrace
            #:unless
            #:unuse-package
-           #:when))
+           #:when
+           #:with-accessors
+           #:with-compilation-unit
+           #:with-condition-restarts
+           #:with-hash-table-iterator
+           #:with-input-from-string
+           #:with-open-file
+           #:with-open-stream
+           #:with-output-to-string
+           #:with-package-iterator
+           #:with-simple-restart
+           #:with-slots
+           #:with-standard-io-syntax))
 
 (define-package common-lisp/local-macro
   (:nicknames cl/local-macro local-macro)
@@ -1000,7 +1026,8 @@
            #:type-error
            #:unbound-slot
            #:unbound-variable
-           #:undefined-function))
+           #:undefined-function
+           #:warning))
 
 (define-package common-lisp/restart
   (:nicknames cl/restart restart)
