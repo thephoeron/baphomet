@@ -26,6 +26,9 @@
                trivial-types)
   :serial t
   :components ((:file "packages")
+               (:module type-packages
+                :serial t
+                :components ((:file "generic-interface")))
                (:file "types")
                (:file "canonical-forms")
                (:file "parsers")
