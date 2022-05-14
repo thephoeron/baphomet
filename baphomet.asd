@@ -15,7 +15,7 @@
   :author '("\"the Phoeron\" Colin J.E. Lupton <thephoeron@protonmail.com>"
             "Volkan Yazici <volkan.yazici@gmail.com>")
   :homepage "https://thephoeron.github.io/baphomet/"
-  :source-control "https://github.com/thephoeron/baphomet"
+  :source-control (:git "https://github.com/thephoeron/baphomet")
   :bug-tracker "https://github.com/thephoeron/baphomet/issues"
   :mailto "thephoeron@protonmail.com"
   :version (:read-file-form "VERSION")
