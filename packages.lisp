@@ -989,7 +989,7 @@
   (:export))
 
 (define-package common-lisp/structure
-  (:nicknames cl/structure structure)
+  (:nicknames cl/structure cl/struct structure struct)
   (:reexport cl/generic-interface)
   (:recycle cl)
   (:export))
@@ -1318,6 +1318,12 @@
            #:ensure-function
            #:ensure-list
            #:ensure-plist
+           #:ensure-symbol
+           #:assoc-val
+           #:assoc-val-if
+           #:assoc-val-if-not
+           #-lispworks #:with-unique-names
+           #:parse-components
            #:with-components
            ;; Definers
            #:definer-class

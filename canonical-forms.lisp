@@ -41,9 +41,13 @@ FORM."
       (cons (or (cdr val) :no-value))
       (otherwise (error "~S is not an association list." val)))))
 
-(defun assoc-val-if (predicate alist &key key))
+(defun assoc-val-if (predicate alist &key key)
+  (when (funcall predicate)
+    (assoc-val key alist)))
 
-(defun assoc-val-if-not (predicate alist &key key))
+(defun assoc-val-if-not (predicate alist &key key)
+  (unless (funcall predicate)
+    (assoc-val key alist)))
 
 ;;; Copied from cl-ppcre project of Dr. Edmund Weitz. Reference implementation
 ;;; posted to comp.lang.lisp as <cy3bshuf30f.fsf@ljosa.com> by Vebjorn Ljosa.

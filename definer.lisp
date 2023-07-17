@@ -90,8 +90,7 @@
                             (language (ensure-symbol (package-name (symbol-package type-name)) :keyword))
                             (definer-name (format nil "~A-DEFINER" (symbol-name type-name))))
   (declare (symbol type-name eval-type-op instance-name return-type)
-           (vector definer-options)
-           (list typed-lambda-list))
+           (list definer-options typed-lambda-list))
   `(progn
      (defparameter *current-package-name* (package-name *package*))
      (defparameter *current-language-name* (package-name *language*))

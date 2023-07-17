@@ -89,35 +89,35 @@ TABLE."
 
 ;;;; === [[ :: [derived-type] STRING-DESIGNATOR :: ]] ===================================================================================================== ;;;;
 
-(defun string-designator-p (thing)
-  (typep thing 'string-designator))
-
 (deftype string-designator ()
   '(or string symbol character null))
 
-;;;; === [[ :: [derived-type] PROPER-LIST :: ]] =========================================================================================================== ;;;;
+(defun string-designator-p (thing)
+  (typep thing 'string-designator))
 
-(defun proper-list-p (thing &optional (element-type '*))
-  (typep thing `(and list (proper-list ,element-type))))
+;;;; === [[ :: [derived-type] PROPER-LIST :: ]] =========================================================================================================== ;;;;
 
 (deftype proper-list (&optional (element-type '*))
   `(and list (cons ,element-type *)))
 
-;;;; === [[ :: [derived-type] PROPERTY-LIST :: ]] ========================================================================================================= ;;;;
+(defun proper-list-p (thing &optional (element-type '*))
+  (typep thing `(and list (proper-list ,element-type))))
 
-(defun property-list-p (thing)
-  (typep thing 'property-list))
+;;;; === [[ :: [derived-type] PROPERTY-LIST :: ]] ========================================================================================================= ;;;;
 
 (deftype property-list (&optional (element-type '*))
   `(and list (cons keyword (cons ,element-type *))))
 
-;;;; === [[ :: [derived-type] ASSOCIATION-LIST :: ]] ====================================================================================================== ;;;;
+(defun property-list-p (thing)
+  (typep thing 'property-list))
 
-(defun association-list-p (thing &optional (key-type 'string-designator) (element-type '*))
-  (typep thing `(association-list ,@key-type ,@element-type)))
+;;;; === [[ :: [derived-type] ASSOCIATION-LIST :: ]] ====================================================================================================== ;;;;
 
 (deftype association-list (&optional (key-type 'string-designator) (element-type '*))
   `(and list (cons (cons ,key-type ,element-type) *)))
+
+(defun association-list-p (thing &optional (key-type 'string-designator) (element-type '*))
+  (typep thing `(association-list ,@key-type ,@element-type)))
 
 ;;;; === [[ :: [parametric-type] EVAL-OP :: ]] ================================================================================================ ;;;;
 
