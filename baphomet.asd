@@ -43,3 +43,18 @@
   :perform (load-op :after (op c)
              (provide :baphomet)
              (pushnew :baphomet *features*)))
+
+(defsystem baphomet/test
+  :description "Test suite for BAPHOMET."
+  :author "\"the Phoeron\" Colin J.E. Lupton <thephoeron@protonmail.com>"
+  :homepage "https://thephoeron.github.io/baphomet/"
+  :source-control (:git "https://github.com/thephoeron/baphomet")
+  :bug-tracker "https://github.com/thephoeron/baphomet/issues"
+  :mailto "thephoeron@protonmail.com"
+  :version (:read-file-form "VERSION")
+  :licence "MIT"
+  :depends-on (baphomet
+               parachute)
+  :serial t
+  :components ((:module test
+                :components ((:file "suite")))))
